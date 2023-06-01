@@ -9,7 +9,61 @@
         <Color x:Key="Tertiary">#705c2e</Color>
 
     </ContentPage.Resources>
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,0, 10, 0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    Text="Color Maker"/>
+                <Label Text="Red Value"/>
 
-    <Button BackgroundColor="{StaticResource Secondary}"/>
+                <Slider x:Name="sldRed"
+                        ThumbColor="{StaticResource Primary}"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Label Text="Green Value"/>
+                <Slider x:Name="sldGreen"
+                        ThumbColor="{StaticResource Primary}"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Label Text="Blue Value"/>
+                <Slider x:Name="sldBlue"
+                        ThumbColor="{StaticResource Primary}"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        ValueChanged="Slider_ValueChanged"/>
+                <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            VerticalOptions="Center"
+                            Text="HEX Value: #0000000"/>
+                        <ImageButton
+                            Margin="10,0,0,0"
+                            HeightRequest="25"
+                            Source="copy.svg"
+                            VerticalOptions="Center"
+                            WidthRequest="25"
+                            Clicked="ImageButton_Clicked"/>
+
+                    </HorizontalStackLayout>
+
+                </Frame>
+
+                <Button
+                    x:Name="btnRandom"
+                    BackgroundColor="{StaticResource Primary}"
+                    Text="Generate Random Color"
+                    Clicked="btnRandom_Clicked"/>
+            </VerticalStackLayout>
+
+        </Frame>
+        </Grid>
+
 </ContentPage>
 
